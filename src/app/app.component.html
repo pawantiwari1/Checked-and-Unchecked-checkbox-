@@ -1,0 +1,17 @@
+<h1>Unchek All Roles</h1>
+
+<div class="form-check" *ngFor="let appUserRole of anchorList">
+                    {{isChecked}}         
+  <input class="form-check-input" name="{{appUserRole.roleName}}" type="checkbox"  [(ngModel)]="appUserRole.isChecked" id="{{appUserRole.roleName}}" (change)="onChangeRole(appUserRole.roleName, $event)">
+   
+  <label class="form-check-label" for="{{appUserRole.roleName}}">
+      {{appUserRole.roleName}}
+  </label> 
+
+</div>
+
+<button (click)="checkedEvnt(false)">Uncheck All</button>
+
+<button (click)="checkedEvnt(true)">Check All</button>
+
+<pre>{{ userRoleListTemp | json}}</pre>
